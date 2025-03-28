@@ -1,26 +1,78 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: 210 30% 98%; /* #F7F9FC - Blanco azulado */
+    --foreground: 203 45% 18%; /* #183347 - Azul oscuro */
+
+    --card: 210 30% 98%; /* #F7F9FC - Blanco azulado */
+    --card-foreground: 203 45% 18%; /* #183347 - Azul oscuro */
+
+    --popover: 210 30% 98%; /* #F7F9FC - Blanco azulado */
+    --popover-foreground: 203 45% 18%; /* #183347 - Azul oscuro */
+
+    --primary: 203 45% 18%; /* #183347 - Azul oscuro */
+    --primary-foreground: 210 30% 98%; /* #F7F9FC - Blanco azulado */
+
+    --secondary: 205 38% 26%; /* #2A4A5E - Azul medio */
+    --secondary-foreground: 210 30% 98%; /* #F7F9FC - Blanco azulado */
+
+    --muted: 205 38% 26%; /* #2A4A5E - Azul medio con opacidad */
+    --muted-foreground: 205 20% 65%; /* Versión más clara del azul medio */
+
+    --accent: 179 62% 31%; /* #1E7F7C - Verde azulado */
+    --accent-foreground: 210 30% 98%; /* #F7F9FC - Blanco azulado */
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 30% 98%; /* #F7F9FC - Blanco azulado */
+
+    --border: 205 20% 85%; /* Versión más clara del azul medio */
+    --input: 205 20% 85%; /* Versión más clara del azul medio */
+    --ring: 179 62% 31%; /* #1E7F7C - Verde azulado */
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 203 45% 18%; /* #183347 - Azul oscuro */
+    --foreground: 210 30% 98%; /* #F7F9FC - Blanco azulado */
+
+    --card: 203 45% 18%; /* #183347 - Azul oscuro */
+    --card-foreground: 210 30% 98%; /* #F7F9FC - Blanco azulado */
+
+    --popover: 203 45% 18%; /* #183347 - Azul oscuro */
+    --popover-foreground: 210 30% 98%; /* #F7F9FC - Blanco azulado */
+
+    --primary: 210 30% 98%; /* #F7F9FC - Blanco azulado */
+    --primary-foreground: 203 45% 18%; /* #183347 - Azul oscuro */
+
+    --secondary: 205 38% 26%; /* #2A4A5E - Azul medio */
+    --secondary-foreground: 210 30% 98%; /* #F7F9FC - Blanco azulado */
+
+    --muted: 205 38% 26%; /* #2A4A5E - Azul medio */
+    --muted-foreground: 205 20% 65%; /* Versión más clara del azul medio */
+
+    --accent: 179 62% 31%; /* #1E7F7C - Verde azulado */
+    --accent-foreground: 210 30% 98%; /* #F7F9FC - Blanco azulado */
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 30% 98%; /* #F7F9FC - Blanco azulado */
+
+    --border: 205 38% 26%; /* #2A4A5E - Azul medio */
+    --input: 205 38% 26%; /* #2A4A5E - Azul medio */
+    --ring: 179 62% 31%; /* #1E7F7C - Verde azulado */
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
 }
+
